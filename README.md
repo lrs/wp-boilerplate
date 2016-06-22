@@ -32,6 +32,7 @@ Installation requires [node](https://nodejs.org/en/), [Bower](https://bower.io/)
 - clone the [git repo](https://github.com/lrs/wp-boilerplate.git) to a local directory.
 - Replace all occurences of 'custom_theme' in the src/static/pages/functions.php with the name of your theme.
 - Replace all references to 'wp-boilerplate' in the src/static/pages/style.css with those of your theme.
+- Install Nodejs, Bower and Typings if you haven't done so already.
 
 ### Run the following shell commands
 - $ typings install
