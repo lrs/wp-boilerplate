@@ -1,0 +1,162 @@
+#primary {
+  padding: 30px 0;
+}
+
+.post, .comments-area {
+
+  .entry-header, .post-body, .comments-wrap, .entry-summary {
+    padding: 0;
+  }
+  .entry-summary {
+    margin: 0;
+  }
+
+  .post-body {
+    font-size: 1.7rem;
+    margin: 15px 0;
+  }
+
+  .entry-header {
+    h2, h3 {
+      line-height: 1.5em;
+    }
+    .entry-title {
+      margin: 0 0 15px;
+      padding: 0 0 15px;
+
+      @media screen and (max-width: 767px) {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  .entry-image {
+    height: auto;
+    margin: 15px auto;
+    text-align: center;
+  }
+
+  .entry-details {
+    font-size: 14px;
+
+    .entry-detail {
+      display: inline-block;
+      margin-right: 5px;
+
+      i.fa {
+        margin-right: 2px;
+      }
+    }
+  }
+
+  .entry-footer {
+    padding: 20px 0;
+
+    span {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.site-main {
+  .post-navigation, .comment-navigation, .posts-navigation {
+    margin-bottom: 60px;
+  }
+}
+
+#commentform {
+  .btn {
+    margin-right: 5px;
+  }
+}
+
+.comments-area {
+  h3 {
+    text-align: left;
+  }
+  h4 {
+    font-size: 1.3em;
+  }
+
+  .comment-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0 15px 0;
+
+    .comment {
+      background: color(lightest);
+      padding: 15px;
+      margin: 15px 0 5px 0;
+
+      .comment-content {
+        font-weight: normal;
+      }
+
+      .children {
+        padding: 0;
+        list-style: none;
+        margin-bottom: 0;
+
+        .comment {
+          border: none;
+          padding-right: 0;
+          padding-left: 15px;
+          border-left: 1px solid color(light);
+        }
+      }
+    }
+  }
+
+  .comment-metadata {
+    margin: 10px 0;
+    font-size: 14px;
+  }
+
+  footer {
+    background: none;
+    color: inherit;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  #respond {
+    margin: 40px 0 0;
+    padding: 20px 0 0;
+  }
+}
+
+.widget {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: solid 1px color(lighter);
+
+  &:last-child {
+    margin-bottom:0;
+    padding-bottom: 0;
+    border: none;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0 0 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.widget_search {
+  padding: 30px 0;
+}

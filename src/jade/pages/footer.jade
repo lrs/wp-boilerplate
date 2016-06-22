@@ -1,0 +1,44 @@
+footer#footer
+  .container
+    .row
+      .col-sm-3
+        p copyright &copy; wp-boilerplate
+          - echo date("Y")
+        p coded by
+          a(href="#", title="The Author")
+            |  The Author
+      .col-sm-3
+        ul
+          li
+            a(href="/", title="Home") Home
+          li
+            a(href="#", title="About Us") About Us
+          li
+            a(href="#", title="News") News
+          li
+            a(href="#", title="Contact") Contact
+      .col-sm-3
+        ul
+          li
+            a(href="#", title="Facebook") Facebook
+          li
+            a(href="#", title="Twitter") Twitter
+          li
+            a(href="#", title="YouTube") YouTube
+          li
+            a(href="#", title="LinkedIn") LinkedIn
+      .col-sm-3
+        h5 Tiny Header
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis iure consequatur delectus amet possimus aliquam officia veniam. Distinctio vitae, eius!
+  .container
+    .row.text-center
+    a(href="#top", title="Return to the top", data-scroll-target="#top", data-scroll-speed="350").scroller-main.scroll_top_out
+      | <svg viewBox="0 0 80 80" id="chevron-up"><path id="chevron-up-path" d="M 0,60 40,20 80,60" style="fill:none"/></svg>
+
+| </div>
+script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+- wp_footer()
+script(src!=-bloginfo('template_directory') + "/assets/js/theme.js")
+
+| </body>
+| </html>

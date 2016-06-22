@@ -1,0 +1,72 @@
+
+:php
+  if ( post_password_required() ) { return; }
+
+#comments.comments-area
+  .comments-wrap
+
+    - if ( have_comments() ) :
+    h3.comments-title
+      - printf( esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title' ) ), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' )
+    - if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+    nav#comment-nav-above.navigation.comment-navigation
+      h4.sr-only
+        - esc_html_e( 'Comment navigation' )
+    .nav-links
+      .nav-previous
+        - previous_comments_link( esc_html__( 'Older Comments' ) )
+      .nav-next
+        - next_comments_link( esc_html__( 'Newer Comments' ) )
+    - endif
+
+    ol.comment-list
+      - wp_list_comments( array( 'style' => 'ol', 'short_ping' => true ) )
+
+    - if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) :
+    nav#comment-nav-below.navigation.comment-navigation
+      h4.sr-only
+        - esc_html_e( 'Comment navigation' )
+    .nav-links
+      .nav-previous
+        - previous_comments_link( esc_html__( 'Older Comments' ) )
+      .nav-next
+        - next_comments_link( esc_html__( 'Newer Comments' ) )
+    - endif
+
+    //- end if have comments
+    - endif
+
+    - if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+    p.no-comments
+      - esc_html_e( 'Comments are closed.' )
+    - endif
+
+    :php
+      $fields = array(
+        'author' =>
+          '<div class="form-group">
+            <label for="author" class="control-label sr-only">Name<span class="required">*</span></label>
+            <input type="text" name="author" class="form-control" id="author" placeholder="Name*" aria-required="true" required="required">
+          </div>',
+        'email' =>
+          '<div class="form-group">
+            <label for="email" class="control-label sr-only">Email<span class="required">*</span></label>
+            <input name="email" type="text" class="form-control" id="email" placeholder="Email*" aria-required="true" required="required">
+          </div>',
+        'url' =>
+          '<div class="form-group">
+            <label for="url" class="control-label sr-only">Website</label>
+            <input type="text" name="url" class="form-control" id="url" placeholder="Website">
+          </div>'
+      );
+
+      $comments_args = array(
+        'comment_notes_before' => '<h5>Required fields are marked <span class="required">*</span>. Your email address will not be published.</h5>',
+        'fields' => apply_filters( 'comment_form_default_fields', $fields ),
+        'label_submit' => __( 'Submit' ),
+        'class_submit' => 'btn btn-lg btn-info',
+        'title_reply' => __( 'Leave a comment' ),
+        'comment_field' => '<div class="comment-form-comment form-group"><label for="comment" class="sr-only">Comment <span class="required">*</span></label><textarea id="comment" rows="8" class="form-control input-lg" name="comment" placeholder="comment *"></textarea></div>'
+      );
+
+      comment_form($comments_args);

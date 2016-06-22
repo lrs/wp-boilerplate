@@ -1,0 +1,57 @@
+.navbar {
+  margin-bottom: 0;
+
+  @media screen and (min-width: 768px) {
+    border-radius: 0;
+  }
+  .navbar-header {
+    .navbar-brand {
+      padding: 9px 0;
+      margin-left: 0;
+
+      @media screen and (max-width: 767px) {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.navbar-inverse {
+  background: color(nav);
+  border: none;
+
+  .navbar-nav {
+    & > li > a {
+      color: color(nav-link);
+
+      &:hover, &:focus {
+        color: color(nav-link-hover);
+      }
+    }
+
+    & > .active > a {
+      background: color(active);
+      color: color(nav-link-hover);
+    }
+
+    & .dropdown-menu {
+      background: color(dropdown);
+      box-shadow: none;
+      border-radius: 0;
+      font-size: 1.65rem;
+
+      & > li > a {
+        color: color(nav-link);
+
+        &:hover, &:focus {
+          background: color(active);
+          color: color(nav-link-hover);
+        }
+      }
+    }
+  }
+
+  .navbar-collapse {
+    border: none;
+  }
+}

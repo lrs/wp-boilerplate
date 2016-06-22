@@ -1,0 +1,21 @@
+nav#menu.navbar.navbar-inverse.navbar-fixed-top.expanded
+  .container
+    .navbar-header
+      button(type="button", data-toggle="collapse", data-target=".navbar-collapse", aria-expanded="false").navbar-toggle.collapsed
+        span.sr-only Toggle navigation
+        each val in [1, 2, 3]
+          span.icon-bar
+      a(href!=-echo(get_home_url()) + '/#top', title="Bricolage Research and Analysis").navbar-brand.smoothscroll
+        img(alt="Bricolage Research and Analysis Logo", src!=-bloginfo( 'stylesheet_directory' ) + "/assets/img/brand-logo.png", width="32", height="32")
+    :php
+      wp_nav_menu(
+        array(
+          'theme_location' 	=> 'primary',
+          'depth'           => 2,
+          'container' 			=> 'nav',
+          'container_class' => 'navbar-collapse collapse',
+          'menu_class' 			=> 'nav navbar-nav navbar-right',
+          'fallback_cb'     => 'wp_bootstrap_navwalker::fallback',
+          'walker'          => new wp_bootstrap_navwalker()
+        )
+      )

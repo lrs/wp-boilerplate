@@ -1,0 +1,31 @@
+section#posts
+  .container
+    #primary.row.content-area
+      main#main.col-sm-8.site-main
+        h2 Latest Posts
+        - $latest_blog_posts = new WP_Query( array( 'posts_per_page' => 6 ) )
+
+        - if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post();
+
+        article(id!="post-<?php the_ID(); ?>", _!=-post_class())
+          include ../post-header
+
+          .entry-image
+            - if ( has_post_thumbnail ) the_post_thumbnail( 'post-thumbnail', array( 'class' => 'img-responsive' ) )
+
+          .entry-summary
+            h3 Summary
+            - the_excerpt()
+
+          include ../post-footer
+
+        - wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:' ), 'after' => '</div>'))
+
+        - endwhile
+        - endif
+
+        - the_posts_navigation()
+
+      .col-sm-4
+        - get_sidebar()
+        - dynamic_sidebar('sidebar-2')

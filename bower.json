@@ -1,0 +1,29 @@
+{
+  "name": "wp-boilerplate",
+  "description": "WordPress Boilerplate using Gulp, Jade, SASS, es6, Twitter Bootstrap.",
+  "main": "",
+  "authors": [
+    "LRS"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "gulp",
+    "jade",
+    "sass",
+    "es6",
+    "bootstrap"
+  ],
+  "homepage": "https://github.com/lrs/wp-boilerplate",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "^3.3.6",
+    "font-awesome": "^4.6.3"
+  }
+}

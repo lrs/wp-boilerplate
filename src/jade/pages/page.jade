@@ -1,0 +1,18 @@
+include ../partials/get-header
+
+header.page-header
+  .container
+    .row
+      .col-sm-12
+        - the_title( '<h1 class="page-title">', '</h1>' )
+
+.container
+  #primary.row.content-area
+    main#main.col-sm-8.site-main
+      include ../partials/the-loop
+
+    .col-sm-4
+      - get_sidebar()
+      - dynamic_sidebar('sidebar-2')
+
+include ../partials/get-footer

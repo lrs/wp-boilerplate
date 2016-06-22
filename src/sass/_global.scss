@@ -1,0 +1,62 @@
+body {
+  font-family: 'Source Sans Pro', Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.65rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Montserrat, 'Source Sans Pro', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+a {
+  color: color(link);
+
+  &:hover, &:active {
+    color: color(link-hover);
+  }
+
+  transition: color 250ms, background-color 150ms;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.scroller-main {
+  color: color(light);
+  display: block;
+  height: 45px;
+  width: 45px;
+  padding: 6px 8px;
+  position: fixed;
+  bottom: 15px;
+  z-index: 100;
+
+  border: 2px solid color(light);
+  border-radius: 100%;
+
+  transition: all 250ms ease-in;
+
+  &:focus, &:hover {
+    background: color(lighter);
+    background: fade-out(color(lighter), 0.8);
+    color: color(light);
+    outline: none;
+  }
+
+  #chevron-up-path {
+    fill: none;
+    stroke: color(light);
+    stroke-width: 6.5px;
+  }
+}
+.scroll_top_in {
+  display: block;
+  opacity: 1;
+  right: 15px;
+}
+.scroll_top_out {
+  display: none;
+  opacity: 0;
+  right: -80px;
+}

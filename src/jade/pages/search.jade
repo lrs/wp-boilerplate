@@ -1,0 +1,14 @@
+include ../partials/get-header
+header.page-header
+  .container
+    .row
+      .col-sm-12
+        h1.text-center.page-title
+          - esc_html_e( 'Search Results' )
+
+.container
+  #primary.row.content-area
+    main#main.site-main.col-sm-8.col-sm-offset-2
+      include ../partials/the-loop
+
+include ../partials/get-footer

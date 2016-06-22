@@ -1,0 +1,6 @@
+footer.entry-footer
+  span.comments-link
+    a(href!=-comments_link(), title="comments")
+    - comments_number()
+  span.edit-link
+    - edit_post_link('Edit', '', '')

@@ -1,0 +1,22 @@
+{
+	"extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "impliedStrict": true,
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-undef": 1,
+    "no-unused-vars": 1,
+    "indent": [1, 2, {"SwitchCase": 1}]
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "jquery": true
+  },
+  "globals": {
+  }
+}

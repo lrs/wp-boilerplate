@@ -1,0 +1,10 @@
+article(id!="post-<?php the_ID(); ?>", _!=-post_class())
+  include ../partials/post-header
+
+  .post-image
+    - if (has_post_thumbnail) the_post_thumbnail('post-thumbnail', array('class' => 'img-responsive'))
+
+  .post-excerpt
+    - the_excerpt()
+
+  include ../partials/post-footer

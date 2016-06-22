@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "removeComments": true,
+    "outDir": "./dist/assets/js"
+  },
+  "exclude": [
+    "typings/index.d.ts",
+    "typings/globals",
+    "node_modules"
+  ]
+}

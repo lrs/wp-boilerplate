@@ -1,0 +1,22 @@
+.entry-details
+  span.entry-detail
+    i.fa.fa-clock-o(title="Date Posted")
+    time(datetime="2001-01-01")
+      - the_date()
+
+  span.entry-detail
+    i.fa.fa-user(title="Post Author")
+    span
+      - the_author()
+
+  span.entry-detail
+    i.fa.fa-folder-open(title="Posted In")
+    span
+      - the_category(', ')
+
+  - if( get_the_tags() ):
+  span.entry-detail
+    i.fa.fa-tags
+    span
+      - the_tags()
+  - endif

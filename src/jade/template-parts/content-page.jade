@@ -1,0 +1,18 @@
+article(id!="post-<?php the_ID(); ?>", _!=-post_class())
+  include ../partials/post-header
+
+  .entry-image
+    - if ( has_post_thumbnail ) the_post_thumbnail( 'post-thumbnail', array( 'class' => 'img-responsive' ) )
+
+  - if ( count($posts) > 1 ) :
+  .entry-summary
+    h3 Summary
+    - the_excerpt()
+  - else :
+  .entry-content
+    - the_content()
+  - endif
+
+  include ../partials/post-footer
+
+  - wp_link_pages( array( 'before' => '<div class="page-links">' . esc_html__( 'Pages:' ), 'after' => '</div>'))

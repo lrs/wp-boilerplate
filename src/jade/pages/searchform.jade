@@ -1,0 +1,11 @@
+form(method="get", action!=-echo( home_url( '/' ))).search-form
+  .form-group
+    label(for="search").sr-only
+      - esc_html_e( 'search for:' )
+    .input-group
+      input(id="search", type="search", name="s", title!=-esc_html_e( 'search in posts' ), value!=-echo( get_search_query() ), placeholder!=-esc_html_e( 'search phrase' )).form-control.search-field
+      label(for="search-button").sr-only
+        - esc_html_e( 'search for:' )
+      span.input-group-btn
+        button(type="submit")#search-button.btn.btn-default.search-submit
+          i.fa.fa-search

@@ -1,0 +1,45 @@
+$colors: (
+  // general
+  dark:           hsla(0, 0%, 20%, 1),
+  darker:         hsla(72, 50%, 4%, 1),
+  grey:           hsla(67, 3%, 45%, 1),
+  light:          hsla(0, 0%, 72%, 1),
+  lighter:        hsla(0, 0%, 89%, 1),
+  lightest:        hsla(0, 0%, 97%, 1),
+  orange:         hsla(19, 83%, 55%, 1),
+  link:           hsla(199, 96%, 28%, 1),
+  link-hover:     hsla(199, 100%, 38%, 1),
+
+  // main nav
+  nav:            hsla(0, 0%, 20%, 1),
+  nav-link:       hsla(0, 0%, 72%, 1),
+  nav-link-hover: hsla(0, 0%, 89%, 1),
+  active:         hsla(72, 50%, 4%, 1),
+  dropdown:       hsla(72, 50%, 4%, 1),
+
+  // feeds
+  rss:            hsla(32, 81%, 59%, 1),
+
+  // social media
+  git:            hsla(0, 0%, 0%, 1),
+  twitter:        hsla(206, 82%, 63%, 1),
+  facebook:       hsla(221, 44%, 41%, 1),
+  gplus:          hsla(7, 69%, 54%, 1),
+  linkedin:       hsla(201, 100%, 35%, 1),
+  dribble:        hsla(0, 0%, 27%, 1)
+);
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+$shadows: (
+  default: 0    0    3px   hsla(0, 0%, 0%, 0.3),
+  low:     0    3px  5px   hsla(0, 0%, 0%, 0.35),
+  mid:     0    5px  9px   hsla(0, 0%, 0%, 0.5),
+  high:    0    9px  15px  hsla(0, 0%, 0%, 0.5),
+
+  blur:    0    0    15px  black
+);
+@function shadow($shadow-name) {
+  @return map-get($shadows, $shadow-name);
+}
