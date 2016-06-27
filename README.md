@@ -52,7 +52,8 @@ You can now zip up the dist/ folder and upload as a theme to your WordPress inst
   - watch for changes and compile source files as you edit then save them.
 
 - src/js/tools.js contains some unobtrusive example methods.
-  - If you want to use them, you should change the ROOT_URL variable at the top of src/js/tools.js to the url of you home page.
+  - If you want to use them, you should change the ROOT_URL variable at the top of src/js/tools.js to the url of you home page e.g. const ROOT_URL = "http://localhost/".
+
 ---
 
 ##Files
