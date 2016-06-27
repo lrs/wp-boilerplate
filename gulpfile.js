@@ -43,10 +43,7 @@ const uglifyOptions = {
 
 // You should only uncomment scripts that will be used
 const jsConcat = [
-  // temp
-  //'./bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-
-  //'./src/js/tether.js',
+  // './bower_components/tether/dist/js/tether.js',
   // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js',
   // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js',
   // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js',
