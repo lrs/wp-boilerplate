@@ -119,12 +119,24 @@ gulp.task('sass', () => {
 // transpile and optionally uglify ./src/js/theme.js -> ./dist/assets/js/theme.js
 gulp.task('js', () => {
   gulp.src(jsConcat)
+  .pipe(
+    gulpIf(
+      !gutil.env.dist,
+      maps.init()
+    )
+  )
   .pipe(babel().on('error', notify))
   .pipe(concat('theme.js'))
   .pipe(
     gulpIf(
       gutil.env.dist,
       uglify( uglifyOptions ).on('error', notify)
+    )
+  )
+  .pipe(
+    gulpIf(
+      !gutil.env.dist,
+      maps.write('../maps').on('error', notify)
     )
   )
   .pipe(gulp.dest('./dist/assets/js/'))
