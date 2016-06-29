@@ -30,9 +30,6 @@ const autoPrefixOptions = {
   cascade: false
 }
 
-const babelOptions = {
-  compact: false
-}
 const uglifyOptions = {
   mangle: true,
   compress: {
@@ -122,8 +119,8 @@ gulp.task('sass', () => {
 // transpile and optionally uglify ./src/js/theme.js -> ./dist/assets/js/theme.js
 gulp.task('js', () => {
   gulp.src(jsConcat)
+  .pipe(babel().on('error', notify))
   .pipe(concat('theme.js'))
-  .pipe(babel( babelOptions ).on('error', notify))
   .pipe(
     gulpIf(
       gutil.env.dist,
