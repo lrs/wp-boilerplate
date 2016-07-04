@@ -5,8 +5,8 @@ nav#menu.navbar.navbar-inverse
         span.sr-only Toggle navigation
         each val in [1, 2, 3]
           span.icon-bar
-      a(href!=-echo(get_home_url()) + '/#top', title="Bricolage Research and Analysis").navbar-brand.smoothscroll
-        img(alt="Bricolage Research and Analysis Logo", src!=-bloginfo( 'stylesheet_directory' ) + "/assets/img/brand-logo.png", width="32", height="32")
+      a(href!=-echo(get_home_url()) + '/#top', title="Brand Image").navbar-brand.smoothscroll
+        img(alt="Brand Logo", src!=-bloginfo( 'stylesheet_directory' ) + "/assets/img/brand-logo.png", width="32", height="32")
     :php
       wp_nav_menu(
         array(
