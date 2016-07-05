@@ -38,6 +38,11 @@ const uglifyOptions = {
   }
 }
 
+// Only Babel what you need
+const jsBabel = [
+  './src/js/tools.js'
+]
+
 // You should only uncomment scripts that will be used
 const jsConcat = [
   // './bower_components/tether/dist/js/tether.js',
@@ -53,7 +58,7 @@ const jsConcat = [
   // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js',
   // './bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js',
   './bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js',
-  './src/js/tools.js'
+  './src/js/compiled/tools.js'
 ]
 
 // Utils
@@ -118,6 +123,12 @@ gulp.task('sass', () => {
 
 // transpile and optionally uglify ./src/js/theme.js -> ./dist/assets/js/theme.js
 gulp.task('js', () => {
+  // Only Babel what you need
+  gulp.src(jsBabel)
+  .pipe(babel().on('error', notify))
+  .pipe(gulp.dest('./src/js/compiled/'))
+
+  // Concatenate and optionally uglify to theme.js
   gulp.src(jsConcat)
   .pipe(
     gulpIf(
@@ -125,7 +136,6 @@ gulp.task('js', () => {
       maps.init()
     )
   )
-  .pipe(babel().on('error', notify))
   .pipe(concat('theme.js'))
   .pipe(
     gulpIf(
