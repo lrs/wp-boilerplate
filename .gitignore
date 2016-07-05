@@ -2,6 +2,7 @@ node_modules/
 bower_components/
 typings/
 dist/
+src/js/compiled/
 *.log
 *.txt
 *.config

@@ -168,7 +168,7 @@ gulp.task('jade', () => {
 // Watch for changes and run tasks.
 gulp.task('watches', () => {
   gulp.watch('./src/sass/**/*.scss', ['sass'])
-  gulp.watch('./src/js/**/*.js', ['js'])
+  gulp.watch('./src/js/*.js', ['js'])
   gulp.watch('./src/jade/**/*.jade', ['jade'])
 })
 
