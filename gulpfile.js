@@ -29,6 +29,9 @@ const autoPrefixOptions = {
   browsers: ['last 2 versions'],
   cascade: false
 }
+const cssNanoOptions = {
+  zindex: false
+}
 
 const uglifyOptions = {
   mangle: true,
@@ -109,7 +112,7 @@ gulp.task('sass', () => {
   .pipe(
     gulpIf(
       gutil.env.dist,
-      cssnano()
+      cssnano( cssNanoOptions )
     )
   )
   .pipe(
