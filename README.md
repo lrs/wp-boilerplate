@@ -5,10 +5,10 @@ wp-boilerplate is a simple WordPress starter theme and is licensed under the GNU
 
 It provides support for building a WordPress theme using Jade, SASS and es6 javascript.
 
-It includes Gulp tasks for development(build - produces css maps, doesn't uglify/minify css or js files), production(dist - doesn't produce css maps, uglifies/minifies css,js and php files) and linting(checks).
+Gulp tasks are included for development (build - produces css maps, doesn't uglify/minify css or js files), production (dist - doesn't produce css maps, uglifies/minifies css,js and php files) and linting (checks).
 Gulp tasks will send errors to the console and continue.
 
-To help prevent bloat in your created asset files, you should only include Bootstrap javascript modules that are actually needed (as referenced in /gulpfile.js).
+To help prevent bloat in your created asset files, you should only include javascript files that are actually needed (as referenced in /gulpfile.js).
 You should only include CSS components that are actually needed (as referenced in src/sass/theme.scss).
 
 Includes Typescript definition files for jQuery and Twitter Bootstrap.
