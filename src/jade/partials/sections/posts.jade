@@ -5,7 +5,7 @@ section#posts
         h2 Latest Posts
         - $latest_blog_posts = new WP_Query( array( 'posts_per_page' => 6 ) )
 
-        - if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post();
+        - if ( $latest_blog_posts->have_posts() ) : while ( $latest_blog_posts->have_posts() ) : $latest_blog_posts->the_post()
 
         article(id!="post-<?php the_ID(); ?>", _!=-post_class())
           include ../post-header
