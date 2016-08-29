@@ -162,6 +162,9 @@ function SearchFilter($query) {
 }
 add_filter('pre_get_posts','SearchFilter');
 
+// Add shortcodes to widgets
+add_filter('widget_text', 'do_shortcode');
+
 // format link url for twitter status
 function twitter_format_status($title, $url) {
   $url = str_replace(" ", "%20", $url);
@@ -172,14 +175,11 @@ function twitter_format_status($title, $url) {
   return $result;
 }
 
-// Custom ajax loader
+// Custom ajax loader for Contact Form 7 plugin
 add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');
 function my_wpcf7_ajax_loader () {
 	return  get_bloginfo('stylesheet_directory') . '/assets/img/ajax-loader.gif';
 }
-
-// Add shortcodes to widgets
-add_filter('widget_text', 'do_shortcode');
 
 /* Custom Default Avatar */
 add_filter( 'avatar_defaults', 'newCustomGravatar' );
@@ -201,3 +201,4 @@ remove_action( 'wp_head', 'wlwmanifest_link' );
 remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 remove_action( 'wp_head', 'locale_stylesheet' );
 remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
