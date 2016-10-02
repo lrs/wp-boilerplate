@@ -1,6 +1,6 @@
-#wp-boilerplate
+# wp-boilerplate
 
-##Description
+## Description
 wp-boilerplate is a simple WordPress starter theme and is licensed under the GNU General Public License (see COPYING for terms).
 
 It provides support for building a WordPress theme using Jade, SASS and es6 javascript.
@@ -17,7 +17,7 @@ Includes .vscode/tasks.json for use with [Visual Studio Code](https://code.visua
 
 ---
 
-##Standards And Accessibility
+## Standards And Accessibility
 Generated HTML from the compiled PHP pages validate with the [W3C Markup Validation Service](https://validator.w3.org/).
 
 [A11y](http://a11yproject.com/) tested for Headings, Contrast, Link text, Labels and image alt-text using [tota11y](https://github.com/Khan/tota11y) in-Browser.
@@ -26,7 +26,7 @@ Makes use of Bootstrap's responsive components.
 
 ---
 
-##Installation
+## Installation
 Installation requires [node](https://nodejs.org/en/), [Bower](https://bower.io/) and [Typings](https://github.com/typings/typings).
 
 - clone the [git repo](https://github.com/lrs/wp-boilerplate.git) to a local directory.
@@ -34,18 +34,21 @@ Installation requires [node](https://nodejs.org/en/), [Bower](https://bower.io/)
 - Replace all references to 'wp-boilerplate' in the src/static/pages/style.css with those of your theme.
 - Install Nodejs, Bower and Typings if you haven't done so already.
 
-### Run the following shell commands
+### Run the following shell commands:
+
+*Commands are run from the root directory of your cloned repository*
 - $ typings install
   - installs definitions for jQuery and Bootstrap.
 - $ bower install
   - installs Bootstrap-sass (also includes jQuery) and Font-Awesome components.
+  - *Requires the path to Git (e.g. C:\Program Files\Git\bin) to be added to the PATH system variable if installing on Windows*
 - $ npm install
   - installs modules and runs the postinstall script to copy static files from /src to /dist, compile source files and run linting tasks.
   - (remember; patience is a virtue!)
 
 You can now zip up the dist/ folder and upload as a theme to your WordPress installation!
 
-###The next steps are optional and depend on your work flow
+### The next steps are optional and depend on your work flow
 - $ gulp publish
   - use this optional Gulp task to copy files from the dist/ folder to the path you specify in the publishPath variable in gulpfile.js.
 - $ npm build
@@ -56,7 +59,7 @@ You can now zip up the dist/ folder and upload as a theme to your WordPress inst
 
 ---
 
-##Files
+## Files
 The following static files will be copied from /src/static to /dist:
 - src/static/pages/
   - functions.php
@@ -83,7 +86,7 @@ The following static files will be copied from /src/static to /dist:
 
 The following files are created from the Gulp build task:
 
-###pages
+### pages
 - 404
 - archive
 - comments
@@ -96,23 +99,23 @@ The following files are created from the Gulp build task:
 - searchform
 - sidebar
 
-###template-parts
+### template-parts
 - content
 - content-none
 - content-page
 
-###assets\css
+### assets\css
 - theme.css
 
-###assets\js
+### assets\js
 - theme.js
 
-###assets\maps
+### assets\maps
 - theme.css.map
 
 ---
 
-##Recommended Plugins
+## Recommended Plugins
 - [Akismet](https://wordpress.org/plugins/akismet/)
 - [Wordfence](https://wordpress.org/plugins/wordfence/)
 - [WP-DBManager](https://wordpress.org/plugins/wp-dbmanager/)
@@ -123,7 +126,7 @@ The following files are created from the Gulp build task:
 
 ---
 
-##Licence
+## Licence
 
 Copyright (C) 2016  [Design-Fu](http://design-fu.com/).
 
